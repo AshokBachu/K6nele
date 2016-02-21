@@ -53,7 +53,8 @@ public class SpeechInputMethodService extends InputMethodService {
     @Override
     public View onCreateInputView() {
         Log.i("onCreateInputView");
-        mInputView = (SpeechInputView) getLayoutInflater().inflate(R.layout.voice_ime_view, null, false);
+        // TODO: make the layout configurable
+        mInputView = (SpeechInputView) getLayoutInflater().inflate(R.layout.voice_ime_lean_view, null, false);
         return mInputView;
     }
 

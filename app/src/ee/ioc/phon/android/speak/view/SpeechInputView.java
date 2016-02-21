@@ -103,10 +103,12 @@ public class SpeechInputView extends LinearLayout {
         int defaultHelpText = keysAsTypedArray.getResourceId(9, 0);
         keysAsTypedArray.recycle();
 
-        if (PreferenceUtils.getPrefBoolean(prefs, getResources(), keyHelpText, defaultHelpText)) {
-            mTvInstruction.setVisibility(View.VISIBLE);
-        } else {
-            mTvInstruction.setVisibility(View.GONE);
+        if (mTvInstruction != null) {
+            if (PreferenceUtils.getPrefBoolean(prefs, getResources(), keyHelpText, defaultHelpText)) {
+                mTvInstruction.setVisibility(View.VISIBLE);
+            } else {
+                mTvInstruction.setVisibility(View.GONE);
+            }
         }
 
         // This button can be pressed in any state.
